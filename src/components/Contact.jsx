@@ -19,10 +19,10 @@ const inputBase = {
 export default function Contact() {
   const { t } = useTranslation()
   const [ref, inView] = useInView(0.1)
-  const [form, setForm]     = useState({ name: '', email: '', subject: '', message: '' })
+  const [form, setForm]       = useState({ name: '', email: '', subject: '', message: '' })
   const [loading, setLoading] = useState(false)
   const [showModal, setShowModal] = useState(false)
-  const [error, setError]   = useState('')
+  const [error, setError]     = useState('')
 
   const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }))
   const isValid = form.name && form.email && form.subject && form.message
@@ -46,24 +46,24 @@ export default function Contact() {
     <>
       <SuccessModal open={showModal} onClose={() => setShowModal(false)} />
 
-      <section id="contacto" ref={ref} style={{ padding: '6rem 2rem', background: 'var(--dark)', position: 'relative', overflow: 'hidden' }}>
+      <section id="contacto" ref={ref} style={{ padding: '6rem 1.5rem', background: 'var(--dark)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 700, height: 700, background: 'radial-gradient(circle, rgba(108,99,255,0.07) 0%, transparent 65%)', pointerEvents: 'none' }} />
 
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+          <div className="grid-2">
 
-            {/* Left */}
+            {/* Left info */}
             <motion.div initial={{ opacity: 0, x: -40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7 }}>
               <div style={{ display: 'inline-block', padding: '0.3rem 0.9rem', borderRadius: 6, background: 'rgba(108,99,255,0.12)', border: '1px solid rgba(108,99,255,0.3)', color: 'var(--primary-light)', fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
                 {t('contact.badge')}
               </div>
-              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1.25rem', lineHeight: 1.2 }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1.25rem', lineHeight: 1.2 }}>
                 {t('contact.headline1')}{' '}
                 <span style={{ background: 'linear-gradient(135deg, var(--primary-light), var(--accent))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   {t('contact.headline2')}
                 </span>
               </h2>
-              <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '2.5rem', fontSize: '1rem' }}>{t('contact.desc')}</p>
+              <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '2rem', fontSize: '1rem' }}>{t('contact.desc')}</p>
 
               {[
                 { label: t('contact.labelDairo'),  value: '+53 55848425', href: WA_DAIRO },
@@ -87,9 +87,9 @@ export default function Contact() {
 
             {/* Right form */}
             <motion.div initial={{ opacity: 0, x: 40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.15 }}
-              style={{ padding: '2.5rem', borderRadius: 24, background: 'var(--dark-3)', border: '1px solid var(--glass-border)' }}
+              style={{ padding: '2rem', borderRadius: 24, background: 'var(--dark-3)', border: '1px solid var(--glass-border)' }}
             >
-              <h3 style={{ fontWeight: 700, fontSize: '1.15rem', marginBottom: '1.75rem', color: 'var(--text)' }}>{t('contact.formTitle')}</h3>
+              <h3 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '1.5rem', color: 'var(--text)' }}>{t('contact.formTitle')}</h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div>

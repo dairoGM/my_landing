@@ -42,15 +42,15 @@ export default function Team() {
   const members = t('team.members', { returnObjects: true })
 
   return (
-    <section id="equipo" ref={ref} style={{ padding: '6rem 2rem', background: 'var(--dark-2)', position: 'relative', overflow: 'hidden' }}>
+    <section id="equipo" ref={ref} style={{ padding: '6rem 1.5rem', background: 'var(--dark-2)', position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg, transparent, var(--accent), transparent)' }} />
 
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <div style={{ display: 'inline-block', padding: '0.3rem 0.9rem', borderRadius: 6, background: 'rgba(0,212,170,0.12)', border: '1px solid rgba(0,212,170,0.3)', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
             {t('team.badge')}
           </div>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
             {t('team.headline1')}{' '}
             <span style={{ background: 'linear-gradient(135deg, var(--primary-light), var(--accent))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               {t('team.headline2')}
@@ -59,33 +59,33 @@ export default function Team() {
           <p style={{ color: 'var(--text-muted)', maxWidth: 520, margin: '0 auto', fontSize: '1rem', lineHeight: 1.7 }}>{t('team.desc')}</p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(440px, 1fr))', gap: '2rem' }}>
+        <div className="grid-2">
           {members.map((member, i) => {
             const meta = MEMBER_META[i]
             return (
               <motion.div key={i} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.15 }}
-                style={{ padding: '2.5rem', borderRadius: 24, background: 'var(--dark-3)', border: '1px solid var(--glass-border)', position: 'relative', overflow: 'hidden', transition: 'border-color 0.25s, transform 0.25s', cursor: 'default' }}
+                style={{ padding: '2rem', borderRadius: 24, background: 'var(--dark-3)', border: '1px solid var(--glass-border)', position: 'relative', overflow: 'hidden', transition: 'border-color 0.25s, transform 0.25s', cursor: 'default' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = `${meta.accentColor}50`; e.currentTarget.style.transform = 'translateY(-6px)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.transform = 'translateY(0)' }}
               >
                 <div style={{ position: 'absolute', top: 0, right: 0, width: 200, height: 200, background: `radial-gradient(circle, ${meta.accentColor}12 0%, transparent 70%)`, pointerEvents: 'none' }} />
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', marginBottom: '1.5rem' }}>
-                  <div style={{ flexShrink: 0, width: 72, height: 72, borderRadius: 20, background: meta.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', fontWeight: 800, color: 'white', fontFamily: 'Space Grotesk, sans-serif', boxShadow: `0 8px 24px ${meta.accentColor}40` }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+                  <div style={{ flexShrink: 0, width: 64, height: 64, borderRadius: 18, background: meta.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.6rem', fontWeight: 800, color: 'white', fontFamily: 'Space Grotesk, sans-serif', boxShadow: `0 8px 24px ${meta.accentColor}40` }}>
                     {meta.initials}
                   </div>
                   <div>
-                    <h3 style={{ fontWeight: 800, fontSize: '1.5rem', background: meta.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '0.25rem' }}>
+                    <h3 style={{ fontWeight: 800, fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', background: meta.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '0.2rem' }}>
                       {member.name}
                     </h3>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>{member.role}</p>
-                    <div style={{ display: 'flex', gap: '0.2rem', marginTop: '0.4rem' }}>
-                      {[...Array(5)].map((_, j) => <Star key={j} size={12} fill={meta.accentColor} color={meta.accentColor} />)}
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.83rem', fontWeight: 500 }}>{member.role}</p>
+                    <div style={{ display: 'flex', gap: '0.2rem', marginTop: '0.35rem' }}>
+                      {[...Array(5)].map((_, j) => <Star key={j} size={11} fill={meta.accentColor} color={meta.accentColor} />)}
                     </div>
                   </div>
                 </div>
 
-                <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '0.92rem' }}>{member.desc}</p>
+                <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '0.9rem' }}>{member.desc}</p>
 
                 <CvButton cvFile={meta.cvFile} cvName={meta.cvName} accentColor={meta.accentColor} label={member.cvLabel} />
                 <p style={{ marginTop: '0.6rem', fontSize: '0.72rem', color: 'var(--text-muted)', textAlign: 'center' }}>{member.cvNote}</p>
@@ -95,10 +95,10 @@ export default function Team() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.4 }}
-          style={{ marginTop: '3rem', padding: '2.5rem', borderRadius: 24, background: 'linear-gradient(135deg, rgba(108,99,255,0.12) 0%, rgba(0,212,170,0.08) 100%)', border: '1px solid rgba(108,99,255,0.25)', textAlign: 'center' }}
+          style={{ marginTop: '2.5rem', padding: '2rem', borderRadius: 24, background: 'linear-gradient(135deg, rgba(108,99,255,0.12) 0%, rgba(0,212,170,0.08) 100%)', border: '1px solid rgba(108,99,255,0.25)', textAlign: 'center' }}
         >
-          <p style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text)', marginBottom: '0.5rem' }}>{t('team.banner')}</p>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', maxWidth: 600, margin: '0 auto' }}>{t('team.bannerDesc')}</p>
+          <p style={{ fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', fontWeight: 600, color: 'var(--text)', marginBottom: '0.5rem' }}>{t('team.banner')}</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>{t('team.bannerDesc')}</p>
         </motion.div>
       </div>
     </section>
