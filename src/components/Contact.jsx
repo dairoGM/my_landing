@@ -86,24 +86,48 @@ export default function Contact() {
                   },
                 ].map((m, i) => (
                   <a key={i} href={m.href} target="_blank" rel="noopener noreferrer"
-                    style={{ textDecoration: 'none', borderRadius: 20, background: 'var(--dark-4)', border: `1px solid var(--glass-border)`, overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.25s, border-color 0.25s, box-shadow 0.25s' }}
-                    onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = `${m.accentColor}60`; e.currentTarget.style.boxShadow = `0 12px 32px ${m.accentColor}25` }}
+                    style={{
+                      textDecoration: 'none', borderRadius: 20,
+                      background: 'var(--dark-3)',
+                      border: '1px solid var(--glass-border)',
+                      overflow: 'hidden', display: 'flex', flexDirection: 'column',
+                      position: 'relative',
+                      transition: 'transform 0.25s, border-color 0.25s, box-shadow 0.25s',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = `${m.accentColor}50`; e.currentTarget.style.boxShadow = `0 12px 32px ${m.accentColor}20` }}
                     onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.boxShadow = 'none' }}
                   >
-                    {/* Card header with gradient */}
-                    <div style={{ background: m.gradient, padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem' }}>
-                      <div style={{ width: 56, height: 56, borderRadius: 16, background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, color: 'white', fontFamily: 'Space Grotesk, sans-serif', backdropFilter: 'blur(8px)' }}>
+                    {/* Subtle glow top-right */}
+                    <div style={{ position: 'absolute', top: 0, right: 0, width: 100, height: 100, background: `radial-gradient(circle, ${m.accentColor}18 0%, transparent 70%)`, pointerEvents: 'none' }} />
+
+                    {/* Card body */}
+                    <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', flex: 1 }}>
+                      {/* Avatar */}
+                      <div style={{
+                        width: 58, height: 58, borderRadius: 16,
+                        background: m.gradient,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: '1.5rem', fontWeight: 800, color: 'white',
+                        fontFamily: 'Space Grotesk, sans-serif',
+                        boxShadow: `0 6px 20px ${m.accentColor}40`,
+                      }}>
                         {m.initials}
                       </div>
                       <div style={{ textAlign: 'center' }}>
-                        <p style={{ fontWeight: 700, fontSize: '1.05rem', color: 'white', fontFamily: 'Space Grotesk, sans-serif' }}>{m.name}</p>
-                        <p style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.8)', fontWeight: 500 }}>{m.role}</p>
+                        <p style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text)', fontFamily: 'Space Grotesk, sans-serif', marginBottom: '0.2rem' }}>{m.name}</p>
+                        <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 500 }}>{m.role}</p>
                       </div>
                     </div>
+
                     {/* Card footer */}
-                    <div style={{ padding: '0.85rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', background: `${m.accentColor}12` }}>
-                      <MessageCircle size={15} color={m.accentColor} />
-                      <span style={{ fontSize: '0.8rem', fontWeight: 600, color: m.accentColor }}>WhatsApp</span>
+                    <div style={{
+                      padding: '0.7rem',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem',
+                      background: `${m.accentColor}10`,
+                      borderTop: `1px solid ${m.accentColor}20`,
+                    }}>
+                      <MessageCircle size={14} color={m.accentColor} />
+                      <span style={{ fontSize: '0.78rem', fontWeight: 600, color: m.accentColor }}>WhatsApp</span>
                     </div>
                   </a>
                 ))}
