@@ -4,22 +4,42 @@ import { Menu, X, Code2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from './LangSwitcher'
 
+const SECTION_IDS = ['inicio', 'sobre-nosotros', 'servicios', 'equipo', 'contacto']
+
 export default function Navbar() {
   const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('inicio')
 
   const links = [
-    { href: '#inicio',        label: t('nav.inicio') },
-    { href: '#sobre-nosotros',label: t('nav.sobre') },
-    { href: '#servicios',     label: t('nav.servicios') },
-    { href: '#equipo',        label: t('nav.equipo') },
-    { href: '#contacto',      label: t('nav.contacto') },
+    { href: '#inicio',         id: 'inicio',         label: t('nav.inicio') },
+    { href: '#sobre-nosotros', id: 'sobre-nosotros',  label: t('nav.sobre') },
+    { href: '#servicios',      id: 'servicios',       label: t('nav.servicios') },
+    { href: '#equipo',         id: 'equipo',          label: t('nav.equipo') },
+    { href: '#contacto',       id: 'contacto',        label: t('nav.contacto') },
   ]
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40)
+
+      // Detectar sección visible
+      let current = 'inicio'
+      for (const id of SECTION_IDS) {
+        const el = document.getElementById(id)
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          // La sección se considera activa cuando su top entra en el tercio superior de la ventana
+          if (rect.top <= window.innerHeight * 0.35) {
+            current = id
+          }
+        }
+      }
+      setActive(current)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -58,14 +78,40 @@ export default function Navbar() {
         </span>
       </a>
 
-      {/* Desktop */}
+      {/* Desktop links */}
       <div style={{ display: 'flex', gap: '1.75rem', alignItems: 'center' }} className="desktop-nav">
-        {links.map(l => (
-          <a key={l.href} href={l.href} style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }}
-            onMouseEnter={e => e.target.style.color = 'white'}
-            onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
-          >{l.label}</a>
-        ))}
+        {links.map(l => {
+          const isActive = active === l.id
+          return (
+            <a key={l.href} href={l.href}
+              style={{
+                color: isActive ? 'white' : 'var(--text-muted)',
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: isActive ? 600 : 500,
+                transition: 'color 0.2s',
+                position: 'relative',
+                paddingBottom: '4px',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = 'white'}
+              onMouseLeave={e => e.currentTarget.style.color = isActive ? 'white' : 'var(--text-muted)'}
+            >
+              {l.label}
+              {/* Underline indicator */}
+              {isActive && (
+                <motion.span
+                  layoutId="nav-indicator"
+                  style={{
+                    position: 'absolute', bottom: 0, left: 0, right: 0,
+                    height: 2, borderRadius: 2,
+                    background: 'linear-gradient(90deg, var(--primary), var(--accent))',
+                  }}
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+            </a>
+          )
+        })}
         <LangSwitcher />
         <a href="#contacto" style={{
           padding: '0.5rem 1.25rem', borderRadius: 8,
@@ -73,8 +119,8 @@ export default function Navbar() {
           color: 'white', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600,
           boxShadow: '0 4px 15px rgba(108,99,255,0.35)', transition: 'transform 0.2s, box-shadow 0.2s',
         }}
-          onMouseEnter={e => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 6px 20px rgba(108,99,255,0.5)' }}
-          onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 15px rgba(108,99,255,0.35)' }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(108,99,255,0.5)' }}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(108,99,255,0.35)' }}
         >{t('nav.hablemos')}</a>
       </div>
 
@@ -96,15 +142,30 @@ export default function Navbar() {
               background: 'rgba(10,10,15,0.97)', backdropFilter: 'blur(20px)',
               borderBottom: '1px solid var(--glass-border)',
               padding: '1.5rem 2rem',
-              display: 'flex', flexDirection: 'column', gap: '1.25rem',
+              display: 'flex', flexDirection: 'column', gap: '0.25rem',
             }}
           >
-            {links.map(l => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)}
-                style={{ color: 'var(--text)', textDecoration: 'none', fontSize: '1rem', fontWeight: 500 }}
-              >{l.label}</a>
-            ))}
-            <div style={{ paddingTop: '0.5rem' }}>
+            {links.map(l => {
+              const isActive = active === l.id
+              return (
+                <a key={l.href} href={l.href} onClick={() => setOpen(false)}
+                  style={{
+                    color: isActive ? 'white' : 'var(--text-muted)',
+                    textDecoration: 'none',
+                    fontSize: '1rem',
+                    fontWeight: isActive ? 600 : 500,
+                    padding: '0.65rem 0.75rem',
+                    borderRadius: 10,
+                    background: isActive ? 'rgba(108,99,255,0.12)' : 'transparent',
+                    borderLeft: isActive ? '3px solid var(--primary)' : '3px solid transparent',
+                    transition: 'all 0.2s',
+                  }}
+                >
+                  {l.label}
+                </a>
+              )
+            })}
+            <div style={{ paddingTop: '0.75rem' }}>
               <LangSwitcher />
             </div>
           </motion.div>
