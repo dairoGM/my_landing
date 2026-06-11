@@ -22,7 +22,7 @@ export default {
     badge: 'About Us',
     headline1: 'Two experts,',
     headline2: 'one goal',
-    p1: '<strong>YADAI Software</strong> was born from the union of two professionals with complementary profiles: software architecture and strategic project management. Together we offer a 360° view of digital product development.',
+    p1: '<strong>YA&DAI Software</strong> was born from the union of two professionals with complementary profiles: software architecture and strategic project management. Together we offer a 360° view of digital product development.',
     p2: 'We understand that every business is unique. That is why we design tailor-made solutions — no generic templates, no unnecessary code. Only what your project needs to scale.',
     values: [
       { title: 'Results-driven', desc: 'Every line of code has a purpose: to grow your business.' },
@@ -48,7 +48,7 @@ export default {
   team: {
     badge: 'Our Team',
     headline1: 'The people behind',
-    headline2: 'YADAI',
+    headline2: 'YA&DAI',
     desc: 'Two professionals, one cohesive team. We combine technology and strategy to create exceptional digital products.',
     members: [
       {
@@ -66,7 +66,7 @@ export default {
         cvNote: 'PDF Format · Updated resume',
       },
     ],
-    banner: 'Together, we are YADAI Software',
+    banner: 'Together, we are YA&DAI Software',
     bannerDesc: 'The combination of technical and management skills allows us to accompany you from idea to final product with an integral and human approach.',
   },
   contact: {

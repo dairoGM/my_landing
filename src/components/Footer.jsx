@@ -11,11 +11,11 @@ export default function Footer() {
           <Code2 size={14} color="white" />
         </div>
         <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '1rem', background: 'linear-gradient(135deg, #fff, var(--primary-light))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-          YADAI Software
+          YA&DAI Software
         </span>
       </div>
       <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-        © {new Date().getFullYear()} YADAI Software · {t('footer.copy')}
+        © {new Date().getFullYear()} YA&DAI Software · {t('footer.copy')}
       </p>
     </footer>
   )

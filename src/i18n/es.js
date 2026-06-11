@@ -22,7 +22,7 @@ export default {
     badge: 'Sobre Nosotros',
     headline1: 'Dos expertos,',
     headline2: 'un solo objetivo',
-    p1: '<strong>YADAI Software</strong> nace de la unión de dos profesionales con perfiles complementarios: arquitectura de software y gestión estratégica de proyectos. Juntos ofrecemos una visión 360° del desarrollo de productos digitales.',
+    p1: '<strong>YA&DAI Software</strong> nace de la unión de dos profesionales con perfiles complementarios: arquitectura de software y gestión estratégica de proyectos. Juntos ofrecemos una visión 360° del desarrollo de productos digitales.',
     p2: 'Entendemos que cada negocio es único. Por eso diseñamos soluciones a la medida — sin plantillas genéricas, sin código innecesario. Solo lo que tu proyecto necesita para escalar.',
     values: [
       { title: 'Enfoque en resultados', desc: 'Cada línea de código tiene un propósito: hacer crecer tu negocio.' },
@@ -48,7 +48,7 @@ export default {
   team: {
     badge: 'Nuestro Equipo',
     headline1: 'Las personas detrás de',
-    headline2: 'YADAI',
+    headline2: 'YA&DAI',
     desc: 'Dos profesionales, un equipo cohesionado. Unimos tecnología y estrategia para crear productos digitales excepcionales.',
     members: [
       {
@@ -66,7 +66,7 @@ export default {
         cvNote: 'Formato PDF · Currículum actualizado',
       },
     ],
-    banner: 'Juntos, somos YADAI Software',
+    banner: 'Juntos, somos YA&DAI Software',
     bannerDesc: 'La combinación de habilidades técnicas y de gestión nos permite acompañarte desde la idea hasta el producto final con un enfoque integral y humano.',
   },
   contact: {

@@ -53,7 +53,7 @@ export default function Navbar() {
           background: 'linear-gradient(135deg, #fff 0%, var(--primary-light) 100%)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
         }}>
-          YADAI
+          YA&DAI
           <span style={{ fontWeight: 400, fontSize: '0.85rem', WebkitTextFillColor: 'var(--text-muted)' }}> Software</span>
         </span>
       </a>

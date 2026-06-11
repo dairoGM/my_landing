@@ -16,7 +16,7 @@ async function sendTelegram(chatId, text) {
 
 export async function sendContactForm({ name, email, subject, message }) {
   const telegramText =
-    `📬 <b>Nuevo contacto — YADAI Software</b>\n\n` +
+    `📬 <b>Nuevo contacto — YA&DAI Software</b>\n\n` +
     `👤 <b>Nombre:</b> ${name}\n` +
     `✉️ <b>Correo:</b> ${email}\n` +
     `📌 <b>Asunto:</b> ${subject}\n\n` +

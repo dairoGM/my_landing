@@ -4,8 +4,8 @@ import { Star, Download, FileUser } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const MEMBER_META = [
-  { gradient: 'linear-gradient(135deg, #6C63FF, #00D4AA)', accentColor: '#6C63FF', initials: 'D', cvFile: '/cv/CV_Dairo_Espanol.pdf', cvName: 'CV-Dairo-YADAI.pdf' },
-  { gradient: 'linear-gradient(135deg, #FF6B9D, #FFB347)', accentColor: '#FF6B9D', initials: 'Y', cvFile: '/cv/CV_YamilaMateu_QA_PM1.0.pdf', cvName: 'CV-Yamila-YADAI.pdf' },
+  { gradient: 'linear-gradient(135deg, #6C63FF, #00D4AA)', accentColor: '#6C63FF', initials: 'D', cvFile: '/cv/CV_Dairo_Espanol.pdf', cvName: 'CV-Dairo-YA&DAI.pdf' },
+  { gradient: 'linear-gradient(135deg, #FF6B9D, #FFB347)', accentColor: '#FF6B9D', initials: 'Y', cvFile: '/cv/CV_YamilaMateu_QA_PM1.0.pdf', cvName: 'CV-Yamila-YA&DAI.pdf' },
 ]
 
 function CvButton({ cvFile, cvName, accentColor, label }) {
