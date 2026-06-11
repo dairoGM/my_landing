@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #6C63FF;
+  --primary-dark: #5A52E0;
+  --primary-light: #8B85FF;
+  --accent: #00D4AA;
+  --accent-dark: #00B894;
+  --dark: #0A0A0F;
+  --dark-2: #12121A;
+  --dark-3: #1A1A26;
+  --dark-4: #22223A;
+  --text: #E8E8F0;
+  --text-muted: #8888A8;
+  --border: rgba(108, 99, 255, 0.2);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--dark);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
