@@ -65,21 +65,49 @@ export default function Contact() {
               </h2>
               <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '2rem', fontSize: '1rem' }}>{t('contact.desc')}</p>
 
-              {[
-                { label: t('contact.labelDairo'),  href: WA_DAIRO },
-                { label: t('contact.labelYamila'), href: WA_YAMILA },
-              ].map((c, i) => (
-                <a key={i} href={c.href} target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', borderRadius: 14, background: 'var(--dark-3)', border: '1px solid var(--glass-border)', textDecoration: 'none', marginBottom: '0.75rem', transition: 'border-color 0.2s, transform 0.2s' }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = '#25D36650'; e.currentTarget.style.transform = 'translateX(4px)' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.transform = 'translateX(0)' }}
-                >
-                  <div style={{ width: 42, height: 42, borderRadius: 10, background: '#25D36615', border: '1px solid #25D36630', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', flexShrink: 0 }}>
-                    <MessageCircle size={20} />
-                  </div>
-                  <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text)' }}>{c.label}</p>
-                </a>
-              ))}
+              {/* Member contact cards */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                {[
+                  {
+                    name: 'Dairo',
+                    role: t('contact.roleDAiro'),
+                    initials: 'D',
+                    gradient: 'linear-gradient(135deg, #6C63FF, #00D4AA)',
+                    accentColor: '#6C63FF',
+                    href: WA_DAIRO,
+                  },
+                  {
+                    name: 'Yamila',
+                    role: t('contact.roleYamila'),
+                    initials: 'Y',
+                    gradient: 'linear-gradient(135deg, #FF6B9D, #FFB347)',
+                    accentColor: '#FF6B9D',
+                    href: WA_YAMILA,
+                  },
+                ].map((m, i) => (
+                  <a key={i} href={m.href} target="_blank" rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', borderRadius: 20, background: 'var(--dark-4)', border: `1px solid var(--glass-border)`, overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.25s, border-color 0.25s, box-shadow 0.25s' }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = `${m.accentColor}60`; e.currentTarget.style.boxShadow = `0 12px 32px ${m.accentColor}25` }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.boxShadow = 'none' }}
+                  >
+                    {/* Card header with gradient */}
+                    <div style={{ background: m.gradient, padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem' }}>
+                      <div style={{ width: 56, height: 56, borderRadius: 16, background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, color: 'white', fontFamily: 'Space Grotesk, sans-serif', backdropFilter: 'blur(8px)' }}>
+                        {m.initials}
+                      </div>
+                      <div style={{ textAlign: 'center' }}>
+                        <p style={{ fontWeight: 700, fontSize: '1.05rem', color: 'white', fontFamily: 'Space Grotesk, sans-serif' }}>{m.name}</p>
+                        <p style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.8)', fontWeight: 500 }}>{m.role}</p>
+                      </div>
+                    </div>
+                    {/* Card footer */}
+                    <div style={{ padding: '0.85rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', background: `${m.accentColor}12` }}>
+                      <MessageCircle size={15} color={m.accentColor} />
+                      <span style={{ fontSize: '0.8rem', fontWeight: 600, color: m.accentColor }}>WhatsApp</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </motion.div>
 
             {/* Right form */}

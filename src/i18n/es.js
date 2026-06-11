@@ -76,6 +76,8 @@ export default {
     desc: 'Cuéntanos sobre tu proyecto. Analizamos tus necesidades y te proponemos la solución más eficiente. La primera consulta es sin costo.',
     labelDairo: 'Dairo',
     labelYamila: 'Yamila',
+    roleDAiro: 'Arquitecto & Full Stack',
+    roleYamila: 'PM · PO · QA Specialist',
     formTitle: 'Enviar mensaje',
     name: 'Nombre completo',
     namePlaceholder: 'Tu nombre',
