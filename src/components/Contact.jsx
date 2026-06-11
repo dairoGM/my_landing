@@ -66,8 +66,8 @@ export default function Contact() {
               <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '2rem', fontSize: '1rem' }}>{t('contact.desc')}</p>
 
               {[
-                { label: t('contact.labelDairo'),  value: '+53 55848425', href: WA_DAIRO },
-                { label: t('contact.labelYamila'), value: '+53 53572771', href: WA_YAMILA },
+                { label: t('contact.labelDairo'),  href: WA_DAIRO },
+                { label: t('contact.labelYamila'), href: WA_YAMILA },
               ].map((c, i) => (
                 <a key={i} href={c.href} target="_blank" rel="noopener noreferrer"
                   style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', borderRadius: 14, background: 'var(--dark-3)', border: '1px solid var(--glass-border)', textDecoration: 'none', marginBottom: '0.75rem', transition: 'border-color 0.2s, transform 0.2s' }}
@@ -77,10 +77,7 @@ export default function Contact() {
                   <div style={{ width: 42, height: 42, borderRadius: 10, background: '#25D36615', border: '1px solid #25D36630', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#25D366', flexShrink: 0 }}>
                     <MessageCircle size={20} />
                   </div>
-                  <div>
-                    <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.1rem' }}>{c.label}</p>
-                    <p style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--text)' }}>{c.value}</p>
-                  </div>
+                  <p style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text)' }}>{c.label}</p>
                 </a>
               ))}
             </motion.div>
