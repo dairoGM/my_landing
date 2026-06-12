@@ -74,13 +74,8 @@ export default function Cases() {
                 ))}
               </div>
 
-              {/* Footer tag */}
-              <div style={{ padding: '1rem 1.75rem', borderTop: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  {c.tags && c.tags.map((tag, j) => (
-                    <span key={j} style={{ padding: '0.2rem 0.6rem', borderRadius: 6, background: `${COLORS[i]}15`, border: `1px solid ${COLORS[i]}30`, color: COLORS[i], fontSize: '0.72rem', fontWeight: 600 }}>{tag}</span>
-                  ))}
-                </div>
+              {/* Footer */}
+              <div style={{ padding: '1rem 1.75rem', borderTop: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'flex-end' }}>
                 <a href="#contacto" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', color: COLORS[i], textDecoration: 'none', fontSize: '0.8rem', fontWeight: 600 }}>
                   {t('cases.similar')} <ArrowRight size={12} />
                 </a>
