@@ -4,7 +4,7 @@ import { Menu, X, Code2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LangSwitcher from './LangSwitcher'
 
-const SECTION_IDS = ['inicio', 'sobre-nosotros', 'servicios', 'equipo', 'contacto']
+const SECTION_IDS = ['inicio', 'sobre-nosotros', 'servicios', 'casos', 'equipo', 'faq', 'contacto']
 
 export default function Navbar() {
   const { t } = useTranslation()
@@ -16,7 +16,9 @@ export default function Navbar() {
     { href: '#inicio',         id: 'inicio',         label: t('nav.inicio') },
     { href: '#sobre-nosotros', id: 'sobre-nosotros',  label: t('nav.sobre') },
     { href: '#servicios',      id: 'servicios',       label: t('nav.servicios') },
+    { href: '#casos',          id: 'casos',           label: t('nav.casos') },
     { href: '#equipo',         id: 'equipo',          label: t('nav.equipo') },
+    { href: '#faq',            id: 'faq',             label: t('nav.faq') },
     { href: '#contacto',       id: 'contacto',        label: t('nav.contacto') },
   ]
 

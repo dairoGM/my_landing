@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Globe, Smartphone } from 'lucide-react'
+import { ArrowRight, Sparkles, Globe, Smartphone, Phone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+
+const WA_DAIRO  = 'https://wa.me/5355848425'
+const WA_YAMILA = 'https://wa.me/5353572771'
+
+function openWhatsApp(msg) {
+  const encoded = encodeURIComponent(msg)
+  // Open Dairo's WhatsApp with pre-filled message
+  window.open(`${WA_DAIRO}?text=${encoded}`, '_blank')
+}
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -45,12 +54,14 @@ export default function Hero() {
           >
             {t('hero.cta1')} <ArrowRight size={18} />
           </a>
-          <a href="#sobre-nosotros" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: 12, background: 'var(--glass)', border: '1px solid var(--glass-border)', color: 'var(--text)', textDecoration: 'none', fontWeight: 600, fontSize: '0.95rem', backdropFilter: 'blur(10px)', transition: 'background 0.2s, border-color 0.2s' }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(108,99,255,0.4)' }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'var(--glass)'; e.currentTarget.style.borderColor = 'var(--glass-border)' }}
+          <button
+            onClick={() => openWhatsApp(t('hero.waMessage'))}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: 12, background: '#25D366', border: 'none', color: 'white', fontWeight: 600, fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 8px 30px rgba(37,211,102,0.35)', transition: 'transform 0.2s, box-shadow 0.2s', fontFamily: 'Inter, sans-serif' }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(37,211,102,0.5)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(37,211,102,0.35)' }}
           >
-            {t('hero.cta2')}
-          </a>
+            <Phone size={17} /> {t('hero.cta2')}
+          </button>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}
