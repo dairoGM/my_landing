@@ -167,7 +167,7 @@ export default {
       },
       {
         q: 'Vocês trabalham remotamente com clientes em outros países?',
-        a: 'Sim, trabalhamos 100% de forma remota com clientes em qualquer país. Usamos ferramentas como Slack, Notion, GitHub e videochamadas para manter uma comunicação fluida independentemente do fuso horário.',
+        a: 'Sim, trabalhamos 100% de forma remota com clientes em qualquer país. Usamos ferramentas como Slack, Discord, GitHub e videochamadas para manter uma comunicação fluida independentemente do fuso horário.',
       },
     ],
   },

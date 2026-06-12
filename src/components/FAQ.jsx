@@ -58,7 +58,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       style={{ overflow: 'hidden' }}
                     >
-                      <div style={{ padding: '0 1.5rem 1.25rem 3.25rem', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.8 }}>
+                      <div style={{ padding: '0 1.25rem 1.25rem 1.5rem', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.8 }}>
                         {item.a}
                       </div>
                     </motion.div>

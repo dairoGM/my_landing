@@ -66,7 +66,7 @@ export default function Contact() {
               <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '2rem', fontSize: '1rem' }}>{t('contact.desc')}</p>
 
               {/* Member contact cards */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px,100%), 1fr))', gap: '1rem' }}>
                 {[
                   {
                     name: 'Dairo',

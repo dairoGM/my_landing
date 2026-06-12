@@ -167,15 +167,21 @@ export default function Navbar() {
                 </a>
               )
             })}
-            <div style={{ paddingTop: '0.75rem' }}>
+            <div style={{ paddingTop: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
               <LangSwitcher />
+              <a href="#contacto" onClick={() => setOpen(false)} style={{
+                padding: '0.55rem 1.25rem', borderRadius: 8,
+                background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
+                color: 'white', textDecoration: 'none', fontSize: '0.88rem', fontWeight: 600,
+                boxShadow: '0 4px 15px rgba(108,99,255,0.35)',
+              }}>{t('nav.hablemos')}</a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
         }

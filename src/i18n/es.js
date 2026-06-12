@@ -167,7 +167,7 @@ export default {
       },
       {
         q: '¿Trabajan de forma remota con clientes en otros países?',
-        a: 'Sí, trabajamos 100% de forma remota con clientes en cualquier país. Usamos herramientas como Slack, Notion, GitHub y videollamadas para mantener una comunicación fluida sin importar la zona horaria.',
+        a: 'Sí, trabajamos 100% de forma remota con clientes en cualquier país. Usamos herramientas como Slack, Discord, GitHub y videollamadas para mantener una comunicación fluida sin importar la zona horaria.',
       },
     ],
   },

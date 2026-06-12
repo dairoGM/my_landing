@@ -46,9 +46,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
-          style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}
+          style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', padding: '0 1rem' }}
         >
-          <a href="#contacto" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: 12, background: 'linear-gradient(135deg, var(--primary), var(--accent))', color: 'white', textDecoration: 'none', fontWeight: 600, fontSize: '0.95rem', boxShadow: '0 8px 30px rgba(108,99,255,0.4)', transition: 'transform 0.2s, box-shadow 0.2s' }}
+          <a href="#contacto" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.75rem', borderRadius: 12, background: 'linear-gradient(135deg, var(--primary), var(--accent))', color: 'white', textDecoration: 'none', fontWeight: 600, fontSize: '0.95rem', boxShadow: '0 8px 30px rgba(108,99,255,0.4)', transition: 'transform 0.2s, box-shadow 0.2s' }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(108,99,255,0.55)' }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(108,99,255,0.4)' }}
           >
@@ -56,7 +56,7 @@ export default function Hero() {
           </a>
           <button
             onClick={() => openWhatsApp(t('hero.waMessage'))}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 2rem', borderRadius: 12, background: '#25D366', border: 'none', color: 'white', fontWeight: 600, fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 8px 30px rgba(37,211,102,0.35)', transition: 'transform 0.2s, box-shadow 0.2s', fontFamily: 'Inter, sans-serif' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.85rem 1.75rem', borderRadius: 12, background: '#25D366', border: 'none', color: 'white', fontWeight: 600, fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 8px 30px rgba(37,211,102,0.35)', transition: 'transform 0.2s, box-shadow 0.2s', fontFamily: 'Inter, sans-serif' }}
             onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 12px 40px rgba(37,211,102,0.5)' }}
             onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(37,211,102,0.35)' }}
           >
@@ -65,7 +65,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}
-          style={{ display: 'flex', gap: '3rem', justifyContent: 'center', marginTop: '5rem', flexWrap: 'wrap' }}
+          style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginTop: '4rem', flexWrap: 'wrap', padding: '0 1rem' }}
         >
           {[
             { icon: <Globe size={20} />, value: t('hero.stat1value'), label: t('hero.stat1label') },

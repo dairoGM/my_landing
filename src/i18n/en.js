@@ -167,7 +167,7 @@ export default {
       },
       {
         q: 'Do you work remotely with clients in other countries?',
-        a: 'Yes, we work 100% remotely with clients in any country. We use tools like Slack, Notion, GitHub and video calls to maintain fluid communication regardless of time zone.',
+        a: 'Yes, we work 100% remotely with clients in any country. We use tools like Slack, Discord, GitHub and video calls to maintain fluid communication regardless of time zone.',
       },
     ],
   },
