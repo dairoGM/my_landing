@@ -38,7 +38,7 @@ export default function About() {
           >
             {values.map((v, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                style={{ padding: '1.25rem', borderRadius: 16, background: 'var(--glass)', border: '1px solid var(--glass-border)', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
+                style={{ padding: 'clamp(1rem, 3vw, 1.25rem)', borderRadius: 16, background: 'var(--glass)', border: '1px solid var(--glass-border)', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(108,99,255,0.4)'; e.currentTarget.style.transform = 'translateY(-4px)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.transform = 'translateY(0)' }}
               >

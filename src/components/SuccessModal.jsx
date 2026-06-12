@@ -39,7 +39,7 @@ export default function SuccessModal({ open, onClose }) {
               }}
             >
               {/* Header verde */}
-              <div style={{ padding: '2.5rem 2rem 2rem', background: 'linear-gradient(135deg, #00C08B, #00D4AA)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem', position: 'relative' }}>
+              <div style={{ padding: 'clamp(1.75rem, 5vw, 2.5rem) clamp(1.25rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem)', background: 'linear-gradient(135deg, #00C08B, #00D4AA)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem', position: 'relative' }}>
                 <button
                   onClick={onClose}
                   style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.2)', border: 'none', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: 'white', transition: 'background 0.2s' }}
@@ -51,7 +51,7 @@ export default function SuccessModal({ open, onClose }) {
                 <motion.div
                   initial={{ scale: 0, rotate: -45 }} animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.15 }}
-                  style={{ width: 80, height: 80, borderRadius: '50%', border: '3px solid rgba(255,255,255,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ width: 'clamp(60px, 15vw, 80px)', height: 'clamp(60px, 15vw, 80px)', borderRadius: '50%', border: '3px solid rgba(255,255,255,0.8)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.25 }}>
                     <CheckCircle size={44} color="white" strokeWidth={1.8} />
@@ -60,7 +60,7 @@ export default function SuccessModal({ open, onClose }) {
               </div>
 
               {/* Cuerpo */}
-              <div style={{ padding: '2rem', textAlign: 'center' }}>
+              <div style={{ padding: 'clamp(1.25rem, 4vw, 2rem)', textAlign: 'center' }}>
                 <motion.h3
                   initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                   style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text)', marginBottom: '0.6rem', fontFamily: 'Space Grotesk, sans-serif' }}

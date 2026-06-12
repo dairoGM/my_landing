@@ -5,7 +5,7 @@ export default function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer style={{ padding: '2rem', background: 'var(--dark-2)', borderTop: '1px solid var(--glass-border)', textAlign: 'center' }}>
+    <footer style={{ padding: 'clamp(1.25rem, 4vw, 2rem)', background: 'var(--dark-2)', borderTop: '1px solid var(--glass-border)', textAlign: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
         <div style={{ width: 28, height: 28, borderRadius: 7, background: 'linear-gradient(135deg, var(--primary), var(--accent))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Code2 size={14} color="white" />

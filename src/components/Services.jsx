@@ -32,12 +32,12 @@ export default function Services() {
         <div className="grid-auto">
           {items.map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.07 }}
-              style={{ padding: '1.75rem', borderRadius: 20, background: 'var(--dark-3)', border: '1px solid var(--glass-border)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'border-color 0.25s, transform 0.25s', cursor: 'default' }}
+              style={{ padding: 'clamp(1.25rem, 3.5vw, 1.75rem)', borderRadius: 20, background: 'var(--dark-3)', border: '1px solid var(--glass-border)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'border-color 0.25s, transform 0.25s', cursor: 'default' }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = `${COLORS[i]}50`; e.currentTarget.style.transform = 'translateY(-6px)' }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--glass-border)'; e.currentTarget.style.transform = 'translateY(0)' }}
             >
               <div style={{ position: 'absolute', top: -30, left: -30, width: 120, height: 120, borderRadius: '50%', background: `radial-gradient(circle, ${COLORS[i]}22 0%, transparent 70%)`, pointerEvents: 'none' }} />
-              <div style={{ width: 52, height: 52, borderRadius: 14, background: `${COLORS[i]}1A`, border: `1px solid ${COLORS[i]}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: COLORS[i], marginBottom: '1.25rem' }}>
+              <div style={{ width: 'clamp(44px, 8vw, 52px)', height: 'clamp(44px, 8vw, 52px)', borderRadius: 14, background: `${COLORS[i]}1A`, border: `1px solid ${COLORS[i]}40`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: COLORS[i], marginBottom: '1.25rem', flexShrink: 0 }}>
                 {ICONS[i]}
               </div>
               <h3 style={{ fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.6rem', color: 'var(--text)' }}>{s.title}</h3>
